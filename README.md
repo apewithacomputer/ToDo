@@ -1,6 +1,6 @@
 # ToDo
 
-*CRUD ToDo list app using Django Rest and React*
+*CRUD ToDo list app using Django Rest and React⚛️ *
 
   Week 1 - API using Django Rest
 
