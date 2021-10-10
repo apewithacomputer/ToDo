@@ -5,7 +5,8 @@ from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('help/', include('api.urls')),
+    path('', include('api.urls')),
+    path('', include('accounts.urls')),
     path('tasks/', views.getTasks),
     path('tasks/<str:pk>/', views.getTask),
     path('tasks/create/', views.createTask),

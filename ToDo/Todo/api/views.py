@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework.serializers import Serializer
 from .serializers import TodoSerializer
 from .models import Todo
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(['GET'])
@@ -70,7 +72,7 @@ def createTask(request):
 def updateTask(request, pk):
     data = request.data
     task = Todo.objects.get(id=pk)
-    serializer = TodoSerializer(task, request.PUT)
+    serializer = TodoSerializer(task, request.data)
     if serializer.is_valid:
         serializer.save()
     return Response(serializer.data)
